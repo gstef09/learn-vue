@@ -1,9 +1,15 @@
 var vm = new Vue({
-    el:"#app",
-    data:{},
+    el: "#app",
+    data: {},
     methods: {
-        eventClick: ()=>{
-            alert('clicked!')
+        send: () => {
+            alert('Send!')
+        },
+        eventClick: () => {
+            alert('Clicked!')
+        },
+        copyText: ()=>{
+            alert('Copied!')
         }
     },
 })

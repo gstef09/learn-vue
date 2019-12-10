@@ -13,7 +13,16 @@
 
 <body>
     <div id="app">
-        <button @click="eventClick()" class="btn btn-info"> click me</button>
+        <form @submit.prevent="send()">
+            <button class="btn btn-info"> click me</button>
+        </form>
+        <input type="text" @keyup.enter.once="eventClick()">
+        <button @click.once="eventClick()" class="btn btn-info"> click me</button>
+        <div @copy="copyText()">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium laboriosam voluptate aliquid
+            doloremque? Blanditiis quis, fugiat explicabo cupiditate quibusdam culpa aut aliquam quo velit maiores, sint
+            a dicta iure perferendis.
+        </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -25,7 +34,7 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/vue-hooks.js">
+    <script src="js/vue-on.js">
 
     </script>
 </body>
