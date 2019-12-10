@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue + CSS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="row">
+            <div class="col-md-6  offset-md-3">
+
+                <my-component :post="post"></my-component>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        Vue.component('my-component', {
+            template: `
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{post.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Comentarios: {{post.coments}}</h6>
+                    <p class="card-text"> Autor {{post.author.name}}</p>
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+       `,
+            props: {
+                post: Object
+            }
+        });
+
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                post: {
+                    title: "My first post",
+                    author: {
+                        name: "G. S. Acuña"
+                    },
+                    coments: 500
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
